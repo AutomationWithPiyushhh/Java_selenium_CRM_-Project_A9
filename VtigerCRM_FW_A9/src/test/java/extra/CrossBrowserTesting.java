@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class CBT {
+public class CrossBrowserTesting {
 	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in);
 		String BROWSER = sc.nextLine();
