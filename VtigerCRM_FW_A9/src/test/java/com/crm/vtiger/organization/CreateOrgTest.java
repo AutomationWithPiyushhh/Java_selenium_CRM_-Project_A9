@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,6 +34,21 @@ public class CreateOrgTest {
 		String USERNAME = pObj.getProperty("un");
 		String PASSWORD = pObj.getProperty("pwd");
 
+		
+//		Getting data from excel file
+		FileInputStream fis2 = new FileInputStream("C:\\Users\\User\\git\\ProjectA9\\VtigerCRM_FW_A9\\src\\test\\resources\\testScriptData.xlsx");
+		
+		Workbook wb = WorkbookFactory.create(fis2);// Create method will not create anything
+												  // It will open the workbook in read-mode
+	
+		Sheet sh = wb.getSheet("org");
+		
+		Row row = sh.getRow(4);
+		
+		Cell cell = row.getCell(0);
+		
+		String orgName = cell.getStringCellValue() + (int) (Math.random() * 1000);
+		
 		WebDriver driver = null;
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
@@ -63,7 +83,8 @@ public class CreateOrgTest {
 
 		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
 
-		String orgName = "qsp_" + (int) (Math.random() * 1000);
+//		Hardcoded Organization name
+//		String orgName = "qsp_" + (int) (Math.random() * 1000);
 		WebElement orgField = driver.findElement(By.name("accountname"));
 		orgField.sendKeys(orgName);
 
