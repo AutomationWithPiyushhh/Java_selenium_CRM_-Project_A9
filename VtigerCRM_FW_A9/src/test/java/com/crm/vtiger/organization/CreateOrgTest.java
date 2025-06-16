@@ -18,37 +18,25 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import generic_utility.FileUtility;
+import generic_utility.JavaUtility;
+import generic_utility.WebDriverUtility;
+
 public class CreateOrgTest {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 
 //		Getting data from properties file
-		FileInputStream fis = new FileInputStream(
-				"C:\\Users\\User\\Basic_Selenium\\VtigerCRM_FW_A9\\src\\test\\resources\\commonData.properties");
+		FileUtility fUtil = new FileUtility();
+		String BROWSER = fUtil.getDataFromPropFile("bro");
+		String URL = fUtil.getDataFromPropFile("url");
+		String USERNAME = fUtil.getDataFromPropFile("un");
+		String PASSWORD = fUtil.getDataFromPropFile("pwd");
 
-		Properties pObj = new Properties();
-		pObj.load(fis);
-
-		String BROWSER = pObj.getProperty("bro");
-		String URL = pObj.getProperty("url");
-		String USERNAME = pObj.getProperty("un");
-		String PASSWORD = pObj.getProperty("pwd");
-
-		
 //		Getting data from excel file
-		FileInputStream fis2 = new FileInputStream("C:\\Users\\User\\git\\ProjectA9\\VtigerCRM_FW_A9\\src\\test\\resources\\testScriptData.xlsx");
-		
-		Workbook wb = WorkbookFactory.create(fis2);// Create method will not create anything
-												  // It will open the workbook in read-mode
-	
-		Sheet sh = wb.getSheet("org");
-		
-		Row row = sh.getRow(4);
-		
-		Cell cell = row.getCell(0);
-		
-		String orgName = cell.getStringCellValue() + (int) (Math.random() * 1000);
-		
+
+		String orgName = fUtil.getDataFromExcelFile("org", 6, 0);
+
 		WebDriver driver = null;
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
@@ -86,7 +74,7 @@ public class CreateOrgTest {
 //		Hardcoded Organization name
 //		String orgName = "qsp_" + (int) (Math.random() * 1000);
 		WebElement orgField = driver.findElement(By.name("accountname"));
-		orgField.sendKeys(orgName);
+		orgField.sendKeys(orgName + JavaUtility.getRandomNumber());
 
 		WebElement saveBtn = driver.findElement(By.xpath("//input[@title='Save [Alt+S]']"));
 		saveBtn.click();
@@ -100,10 +88,18 @@ public class CreateOrgTest {
 		}
 
 //		Logout
+
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+
 		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		Actions act = new Actions(driver);
-		act.moveToElement(profile).perform();
-		Thread.sleep(2000);
+
+//		Actions act = new Actions(driver);
+//		act.moveToElement(profile).perform();
+
+		Thread.sleep(4000);
+		wdUtil.hover(profile);
+
+		Thread.sleep(5000);
 		driver.findElement(By.linkText("Sign Out")).click();
 
 		driver.quit();
