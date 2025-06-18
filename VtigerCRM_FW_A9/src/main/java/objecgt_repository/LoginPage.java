@@ -3,6 +3,7 @@ package objecgt_repository;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
@@ -13,9 +14,13 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(name = "user_name")
-	private WebElement un;
 
+	@FindBys({ 
+		@FindBy(name = "user_name"), 
+		@FindBy(xpath = "//input[@type='uyvfygv']") 
+		})
+	private WebElement un;
+	
 	@FindBy(name = "user_password")
 	private WebElement pwd;
 
@@ -34,4 +39,11 @@ public class LoginPage {
 		return loginBtn;
 	}
 
+//	Business utility
+	public void login() {
+		getUn().sendKeys("admin"); 	//loginpage
+		getPwd().sendKeys("admin"); //loginpage
+		getLoginBtn().click(); 		//loginpage
+	}
+	
 }

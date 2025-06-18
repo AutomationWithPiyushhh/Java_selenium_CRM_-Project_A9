@@ -53,11 +53,8 @@ public class CreateOrgTest {
 //		Login in vtiger crm
 
 		LoginPage lp = new LoginPage(driver);
-
-		lp.getUn().sendKeys("admin"); 	//loginpage
-		lp.getPwd().sendKeys("admin"); //loginpage
-		lp.getLoginBtn().click(); 		//loginpage
-
+		lp.login();
+		
 		Thread.sleep(3000);
 
 //		Creating Organization
