@@ -9,8 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.JavaUtility;
@@ -19,9 +18,10 @@ import objecgt_repository.LoginPage;
 
 public class CreateOrgTest {
 
-
-	public static void main(String[] args) throws InterruptedException, IOException {
-
+	@Test
+	public void createOrgTest() throws IOException, InterruptedException {
+	
+	
 //		Getting data from properties file
 		FileUtility fUtil = new FileUtility();
 		String BROWSER = fUtil.getDataFromPropFile("bro");
@@ -97,4 +97,21 @@ public class CreateOrgTest {
 
 	}
 
+	
+	@Test
+	public void createOrgWithPhoneNum() throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		
+		Thread.sleep(3000);
+		driver.quit();
+	}
+	
+	@Test
+	public void createOrgWithIndustry() throws InterruptedException {
+	WebDriver driver = new ChromeDriver();
+		
+		Thread.sleep(3000);
+		driver.quit();
+	}
+	
 }
