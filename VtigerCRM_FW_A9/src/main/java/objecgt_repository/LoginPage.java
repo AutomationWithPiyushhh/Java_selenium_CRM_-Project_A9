@@ -36,9 +36,9 @@ public class LoginPage {
 	}
 
 //	Business utility
-	public void login() {
-		getUn().sendKeys("admin"); 	//loginpage
-		getPwd().sendKeys("admin"); //loginpage
+	public void login(String username, String password) {
+		getUn().sendKeys(username); 	//loginpage
+		getPwd().sendKeys(password); //loginpage
 		getLoginBtn().click(); 		//loginpage
 	}
 	

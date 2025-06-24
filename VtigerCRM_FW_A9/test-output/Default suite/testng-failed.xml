@@ -5,7 +5,15 @@
     <classes>
       <class name="com.crm.vtiger.organization.CreateOrgTest">
         <methods>
+          <include name="logout"/>
+          <include name="openBro"/>
           <include name="createOrgTest"/>
+          <include name="preCon"/>
+          <include name="dbClose"/>
+          <include name="dbCon"/>
+          <include name="closeBro"/>
+          <include name="postCon"/>
+          <include name="login"/>
         </methods>
       </class> <!-- com.crm.vtiger.organization.CreateOrgTest -->
     </classes>
