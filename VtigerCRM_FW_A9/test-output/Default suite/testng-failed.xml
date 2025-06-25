@@ -3,19 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.vtiger.organization.CreateOrgTest">
+      <class name="testNG.LoingFBWithDP">
         <methods>
-          <include name="logout"/>
-          <include name="openBro"/>
-          <include name="createOrgTest"/>
-          <include name="preCon"/>
-          <include name="dbClose"/>
-          <include name="dbCon"/>
-          <include name="closeBro"/>
-          <include name="postCon"/>
-          <include name="login"/>
+          <include name="login" invocation-numbers="3 4"/>
         </methods>
-      </class> <!-- com.crm.vtiger.organization.CreateOrgTest -->
+      </class> <!-- testNG.LoingFBWithDP -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
