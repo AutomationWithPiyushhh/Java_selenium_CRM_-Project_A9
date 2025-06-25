@@ -1,159 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-25T13:17:17 IST" name="Default suite" finished-at="2025-06-25T13:17:36 IST" duration-ms="18362">
+  <suite started-at="2025-06-25T14:03:03 IST" name="Suite" finished-at="2025-06-25T14:03:14 IST" duration-ms="10913">
     <groups>
     </groups>
-    <test started-at="2025-06-25T13:17:17 IST" name="Default test" finished-at="2025-06-25T13:17:36 IST" duration-ms="18362">
-      <class name="testNG.LoingFBWithDP">
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:testNG.LoingFBWithDP@76f2bbc1]" started-at="2025-06-25T13:17:17 IST" name="login" data-provider="getData" finished-at="2025-06-25T13:17:22 IST" duration-ms="4957" status="PASS">
+    <test started-at="2025-06-25T14:03:03 IST" name="Test1" finished-at="2025-06-25T14:03:10 IST" duration-ms="6396">
+      <class name="parallel.P1">
+        <test-method is-config="true" signature="openBro(java.lang.String)[pri:0, instance:parallel.P1@2e222612]" started-at="2025-06-25T14:03:03 IST" name="openBro" finished-at="2025-06-25T14:03:10 IST" duration-ms="6326" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[unknown]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[dontknow]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:testNG.LoingFBWithDP@76f2bbc1]" started-at="2025-06-25T13:17:22 IST" name="login" data-provider="getData" finished-at="2025-06-25T13:17:27 IST" duration-ms="4384" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kallu kaliya]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Banrakas]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- openBro -->
+        <test-method signature="createOrgTest()[pri:0, instance:parallel.P1@2e222612]" started-at="2025-06-25T14:03:10 IST" name="createOrgTest" finished-at="2025-06-25T14:03:10 IST" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:testNG.LoingFBWithDP@76f2bbc1]" started-at="2025-06-25T13:17:27 IST" name="login" data-provider="getData" finished-at="2025-06-25T13:17:31 IST" duration-ms="4551" status="PASS">
+        </test-method> <!-- createOrgTest -->
+      </class> <!-- parallel.P1 -->
+    </test> <!-- Test1 -->
+    <test started-at="2025-06-25T14:03:03 IST" name="Test2" finished-at="2025-06-25T14:03:11 IST" duration-ms="7572">
+      <class name="parallel.P2">
+        <test-method is-config="true" signature="openBro(java.lang.String)[pri:0, instance:parallel.P2@48974e45]" started-at="2025-06-25T14:03:03 IST" name="openBro" finished-at="2025-06-25T14:03:11 IST" duration-ms="7522" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[manjudevi]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin@123]]>
+                <![CDATA[edge]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:testNG.LoingFBWithDP@76f2bbc1]" started-at="2025-06-25T13:17:31 IST" name="login" data-provider="getData" finished-at="2025-06-25T13:17:33 IST" duration-ms="2185" status="FAIL">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Keys to send should be a not null CharSequence]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
-at testNG.LoingFBWithDP.login(LoingFBWithDP.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+        </test-method> <!-- openBro -->
+        <test-method signature="createContactTest()[pri:0, instance:parallel.P2@48974e45]" started-at="2025-06-25T14:03:11 IST" name="createContactTest" finished-at="2025-06-25T14:03:11 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:testNG.LoingFBWithDP@76f2bbc1]" started-at="2025-06-25T13:17:33 IST" name="login" data-provider="getData" finished-at="2025-06-25T13:17:36 IST" duration-ms="2217" status="FAIL">
+        </test-method> <!-- createContactTest -->
+      </class> <!-- parallel.P2 -->
+    </test> <!-- Test2 -->
+    <test started-at="2025-06-25T14:03:03 IST" name="Test3" finished-at="2025-06-25T14:03:14 IST" duration-ms="10913">
+      <class name="parallel.P3">
+        <test-method is-config="true" signature="openBro(java.lang.String)[pri:0, instance:parallel.P3@223aa2f7]" started-at="2025-06-25T14:03:03 IST" name="openBro" finished-at="2025-06-25T14:03:14 IST" duration-ms="10872" status="PASS">
           <params>
             <param index="0">
-              <value is-null="true"/>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
+              <value>
+                <![CDATA[firefox]]>
+              </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Keys to send should be a not null CharSequence]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
-at testNG.LoingFBWithDP.login(LoingFBWithDP.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- testNG.LoingFBWithDP -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- openBro -->
+        <test-method signature="createLeadstest()[pri:0, instance:parallel.P3@223aa2f7]" started-at="2025-06-25T14:03:14 IST" name="createLeadstest" finished-at="2025-06-25T14:03:14 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLeadstest -->
+      </class> <!-- parallel.P3 -->
+    </test> <!-- Test3 -->
+  </suite> <!-- Suite -->
 </testng-results>
