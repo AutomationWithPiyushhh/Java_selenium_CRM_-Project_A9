@@ -25,6 +25,7 @@ import objecgt_repository.LoginPage;
 public class BaseClass {
 
 	public WebDriver driver = null;
+	public static WebDriver sdriver = null;
 	public FileUtility fUtil = new FileUtility();
 
 	@BeforeSuite
@@ -50,7 +51,9 @@ public class BaseClass {
 		} else {
 			driver = new ChromeDriver();
 		}
-
+		
+		sdriver = driver;
+		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
